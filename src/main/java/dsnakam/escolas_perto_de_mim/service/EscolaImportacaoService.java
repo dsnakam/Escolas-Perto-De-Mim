@@ -5,6 +5,9 @@ import dsnakam.escolas_perto_de_mim.entity.Escola;
 import dsnakam.escolas_perto_de_mim.repository.EscolaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class EscolaImportacaoService {
 
@@ -14,7 +17,7 @@ public class EscolaImportacaoService {
         this.escolaRepository = escolaRepository;
     }
 
-    public Escola importar(EscolaImportacaoDTO dto) {
+    public Escola convert(EscolaImportacaoDTO dto) {
 
         Escola escola = new Escola();
 
@@ -37,6 +40,16 @@ public class EscolaImportacaoService {
                 Double.parseDouble(dto.getLongitude().replace(",", "."))
         );
 
-        return escolaRepository.save(escola);
+        return escola;
+    }
+
+    public List<Escola> importAll(List<EscolaImportacaoDTO> dtos) {
+        List<Escola> escolas = new ArrayList<>();
+
+        for (EscolaImportacaoDTO dto : dtos) {
+            escolas.add(convert(dto));
+        }
+
+        return escolaRepository.saveAll(escolas);
     }
 }

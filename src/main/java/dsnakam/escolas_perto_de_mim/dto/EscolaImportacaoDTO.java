@@ -1,6 +1,7 @@
 package dsnakam.escolas_perto_de_mim.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dsnakam.escolas_perto_de_mim.entity.Escola;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
