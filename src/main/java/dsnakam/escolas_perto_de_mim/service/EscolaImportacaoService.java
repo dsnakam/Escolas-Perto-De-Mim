@@ -52,4 +52,8 @@ public class EscolaImportacaoService {
 
         return escolaRepository.saveAll(escolas);
     }
+
+    public boolean savedEscolasExists() {
+        return escolaRepository.count() > 0;
+    }
 }
