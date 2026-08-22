@@ -22,6 +22,11 @@ public class EscolaDataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        if (escolaImportacaoService.savedEscolasExists()) {
+            System.out.println("Escolas já importadas — pulando.");
+            return;
+        }
+
         JsonMapper mapper = new JsonMapper();
 
         List<EscolaImportacaoDTO> escolas = mapper.readValue(
