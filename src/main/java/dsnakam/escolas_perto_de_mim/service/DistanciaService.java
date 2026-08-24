@@ -42,6 +42,7 @@ public class DistanciaService {
                     return escolaDistancia;
                 })
                 .sorted(Comparator.comparingDouble(EscolaDistancia::distancia))
+                .limit(100)
                 .toList();
         return escolaDistanciaList;
     }
