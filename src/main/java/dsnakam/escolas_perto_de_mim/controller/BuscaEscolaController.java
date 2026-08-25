@@ -1,10 +1,8 @@
 package dsnakam.escolas_perto_de_mim.controller;
 
 import dsnakam.escolas_perto_de_mim.dto.GeocodigoUsuarioDTO;
-import dsnakam.escolas_perto_de_mim.exception.EnderecoNaoEncontradoException;
 import dsnakam.escolas_perto_de_mim.service.DistanciaService;
 import dsnakam.escolas_perto_de_mim.service.GeocodigoUsuarioService;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
