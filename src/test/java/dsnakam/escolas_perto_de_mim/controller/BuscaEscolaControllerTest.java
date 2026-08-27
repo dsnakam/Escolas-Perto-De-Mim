@@ -1,6 +1,7 @@
 package dsnakam.escolas_perto_de_mim.controller;
 
 import dsnakam.escolas_perto_de_mim.dto.GeocodigoUsuarioDTO;
+import dsnakam.escolas_perto_de_mim.exception.EnderecoNaoEncontradoException;
 import dsnakam.escolas_perto_de_mim.service.DistanciaService;
 import dsnakam.escolas_perto_de_mim.service.GeocodigoUsuarioService;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 
@@ -55,5 +57,15 @@ public class BuscaEscolaControllerTest {
                 -23.5613,
                 -46.6565
         );
+    }
+
+    @Test
+    void shouldThrowExceptionWhenEnderecoNotFound() {
+        String testEndereco = "test endereço";
+
+        when(geocodigoUsuarioService.findCoordinates(testEndereco)).thenThrow(new EnderecoNaoEncontradoException("Endereço não encontrado."));
+        assertThrows(EnderecoNaoEncontradoException.class, () -> buscaEscolaController.buscarEscolas(testEndereco));
+
+        verify(geocodigoUsuarioService).findCoordinates(testEndereco);
     }
 }
