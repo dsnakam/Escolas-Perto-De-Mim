@@ -1,10 +1,13 @@
-# Escolas Perto de Mim SP
+# [Escolas Perto de Mim SP](https://escolas-perto-de-mim.onrender.com)
+
 
 Aplicação web que permite a professores e outros usuários encontrarem as escolas estaduais mais próximas de um endereço informado, na cidade de São Paulo.
 
 ## 🎯 Motivação
 
 Professores da rede estadual muitas vezes não têm uma forma simples de visualizar quais escolas ficam mais próximas de sua residência. Este projeto resolve esse problema cruzando dados públicos de escolas com geocoding de endereços, calculando a distância até cada uma.
+
+🔗 **[Acesse o projeto online](https://escolas-perto-de-mim.onrender.com)**
 
 ![Demonstração do projeto](demo.gif)
 
