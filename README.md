@@ -6,6 +6,8 @@ Aplicação web que permite a professores e outros usuários encontrarem as esco
 
 Professores da rede estadual muitas vezes não têm uma forma simples de visualizar quais escolas ficam mais próximas de sua residência. Este projeto resolve esse problema cruzando dados públicos de escolas com geocoding de endereços, calculando a distância até cada uma.
 
+![Demonstração do projeto](demo.gif)
+
 ## 🛠️ Tecnologias
 
 - **Java** + **Spring Boot**
