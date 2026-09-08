@@ -53,8 +53,6 @@ Cobertura inclui testes unitários do cálculo de distância e testes com Mockit
 
 ## 🔮 Próximos passos
 
-- Deploy
-- Containerização com Docker
 - Filtros de busca por Diretoria de Ensino
 - Avaliar substituição/complemento do cálculo de distância em linha reta por uma API de roteamento real (ex: OSRM)
 
